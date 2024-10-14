@@ -23,7 +23,7 @@ pipeline {
         sh 'chmod 777 -R ${WORKSPACE}/*'
         sh 'rsync -avP --exclude ".env" --exclude "vendor" --exclude ".git" --delete ${WORKSPACE}/ ${remote_user}@${staging_server}:${remote_dir}'
         sh 'scp -r ${WORKSPACE} ${remote_user}@${staging_server}:${remote_dir}'
-        sh 'cd ${remote_user}@${staging_server}:${remote_dir} && php artisan cache:clear'
+        //sh 'cd ${remote_user}@${staging_server}:${remote_dir} && php artisan cache:clear'
       }
     }
   }
