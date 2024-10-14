@@ -20,7 +20,7 @@ pipeline {
         // Copy the docker directory
         sh "scp -r '${WORKSPACE}/docker' '${remote_user}@${staging_server}:${remote_dir}'"
         */
-        sh 'chmod 777 -R ${WORKSPACE}/*'
+        //sh 'chmod 777 -R ${WORKSPACE}/*'
         sh 'rsync -avP --exclude ".env" --exclude "vendor" --exclude ".git" --delete ${WORKSPACE}/ ${remote_user}@${staging_server}:${remote_dir}'
         sh 'scp -r ${WORKSPACE}/docker ${remote_user}@${staging_server}:${remote_dir}'  
       }
