@@ -1,9 +1,9 @@
 pipeline {
   agent any
   environment {
-    staging_server="103.49.239.60"
+    staging_server="103.174.114.151"
     remote_dir="/var/www/html/laravel-10"
-    remote_user="app"
+    remote_user="root"
 
   }
   stages {
